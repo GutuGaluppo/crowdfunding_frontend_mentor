@@ -14,11 +14,11 @@
 	position: relative;
 }
 .hero::before {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
-	background:  linear-gradient(to bottom, rgba(0, 0, 0, .6), transparent);
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
 	height: 100%;
 	width: 100%;
 }
@@ -47,4 +47,8 @@ nav ul li a {
 	text-decoration: none;
 	color: #fff;
 	font-weight: 400;
+}
+
+nav ul li a:hover {
+	color: var(--darkCyan);
 }
