@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SubHeader = () => {
 	return (
-		<div className="sub-header">
+		<section className="sub-header">
 			<div className="master-logo">
 				<span>
 					M
@@ -23,7 +23,7 @@ const SubHeader = () => {
 					<span>Bookmarked</span>
 				</div>
 			</div>
-		</div>
+		</section>
 	)
 }
 

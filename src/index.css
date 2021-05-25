@@ -21,16 +21,26 @@ body {
 
 main {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: column;
 	background-color: #f6f6f6;
-	height: 100vh;
+	padding-bottom: 100px;
+}
+
+section{
+	padding: 35px;
+	background-color: #fff;
+	border-radius: 8px;
+	z-index: 1000;
+	line-height: 1.5;
+	width: 53%;
+	min-width: 375px;
 }
 
 button {
 	color: #fff;
-	padding: 12px 20px;
+	padding: 15px 25px;
 	border: none;
-	border-radius: 20px;
+	border-radius: 25px;
 	font-weight: 500;
+	cursor: pointer;
 }

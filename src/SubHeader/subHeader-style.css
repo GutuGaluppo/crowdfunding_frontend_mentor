@@ -1,18 +1,10 @@
 .sub-header {
-	position: absolute;
-	top: 30%;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: auto;
-	padding: 35px;
-	background-color: #fff;
-	border-radius: 8px;
-	z-index: 1000;
-	line-height: 2;
-	width: 50%;
-	min-width: 375px;
+	margin: -50px auto 0;
 }
 
 .master-logo {
@@ -39,7 +31,7 @@ p {
 	justify-content: space-between;
 	align-items: center;
 	margin: 25px auto 0;
-	width: 90%;
+	width: 95%;
 }
 
 .btn-back-project {
@@ -47,7 +39,7 @@ p {
 }
 
 .bookmark-container {
-	height: 36px;
+	height: 44px;
 	background-color: #f7fafa;
 	border-radius: 20px;
 	padding-right: 15px;
@@ -57,8 +49,8 @@ p {
 	color: #fff;
 	padding: 0;
 	margin-right: 10px;
-	height: 36px;
-	width: 36px;
+	height: 44px;
+	width: 44px;
 	background-color: var(--darkCyan);
 	border-radius: 50%;
 }
@@ -66,4 +58,5 @@ p {
 .btn-bookmark + span {
 	color: var(--darkCyan);
 	font-weight: 500;
+	font-size: 14px;
 }
