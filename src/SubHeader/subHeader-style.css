@@ -35,12 +35,12 @@ p {
 }
 
 .btn-back-project {
-	background-color: var(--darkCyan);
+	/* background-color: var(--darkCyan); */
 }
 
 .bookmark-container {
 	height: 44px;
-	background-color: #f7fafa;
+	background-color: var(--lightGray);
 	border-radius: 20px;
 	padding-right: 15px;
 }
@@ -51,12 +51,23 @@ p {
 	margin-right: 10px;
 	height: 44px;
 	width: 44px;
-	background-color: var(--darkCyan);
+	background-color: var(--darkGray);
 	border-radius: 50%;
+}
+.bookmarked {
+	background-color: var(--darkCyan);
+}
+
+.btn-bookmark:hover {
+	background-color: var(--cyan);
 }
 
 .btn-bookmark + span {
-	color: var(--darkCyan);
-	font-weight: 500;
+	color: var(--darkGray);
+	font-weight: 700;
 	font-size: 14px;
+}
+
+.btn-bookmark + span.bookmarked-text {
+	color: var(--darkCyan);
 }
