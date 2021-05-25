@@ -1,9 +1,36 @@
-body {
-  margin: 0;
-  font-family: 'Commissioner', sans-serif;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Commissioner", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+	--cyan: hsl(176, 50%, 47%);
+	--darkCyan: hsl(176, 72%, 28%);
+	--black: hsl(0, 0%, 0%);
+	--darkGray: hsl(0, 0%, 48%);
+}
+
+body {
+	margin: 0 auto;
+	font-family: "Commissioner", sans-serif;
+	font-size: 16px;
+	max-width: 1440px;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f6f6f6;
+	height: 100vh;
+}
+
+button {
+	color: #fff;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 20px;
+	font-weight: 500;
 }
