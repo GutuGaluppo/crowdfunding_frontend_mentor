@@ -1,5 +1,7 @@
 import React from 'react'
 import './optionsModal-style.css'
+import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function CardModal({ data }) {
 	const [isChecked, setIsChecked] = React.useState('')
@@ -16,6 +18,7 @@ function CardModal({ data }) {
 								value={option.title}
 								checked={isChecked === option.title}
 								onChange={() => setIsChecked(option.title)}
+								disabled={option.outOfStock}
 							/>
 
 							<div className="card-title-container">
@@ -35,8 +38,11 @@ function CardModal({ data }) {
 						{option.title === isChecked &&
 							<div className="pledge-input-container">
 								<p>Enter your pledge</p>
-								<div>
-									<input type="text" />
+								<div className="input-wrapper">
+									<div className="input-container">
+										<FontAwesomeIcon icon={faDollarSign} id="input_img"/>
+										<input type="text" id="input"/>
+									</div>
 									<button>Continue</button>
 								</div>
 							</div>
