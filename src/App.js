@@ -18,11 +18,10 @@ function App() {
 	const [totalBackers, setTotalBackers] = useState(5007)
 	const [daysLeft, setDaysLeft] = useState(56)
 	const [showModal, setShowModal] = useState(false)
-	const [showThanks, setShowThanks] = useState(true)
+	const [showThanks, setShowThanks] = useState(false)
 
-	const handleBacked = (n) => {
-		console.log(backed)
-		setBacked(backed + n)
+	function handleBacked(amount) {
+		setBacked(backed + amount)
 		setTotalBackers(totalBackers + 1)
 	}
 
@@ -30,7 +29,9 @@ function App() {
 		<>
 			<Navbar />
 			<main>
-				<SubHeader setShowModal={setShowModal} />
+				<SubHeader
+					setShowModal={setShowModal}
+				/>
 				<PledgeContainer
 					backed={backed}
 					totalBackers={totalBackers}
@@ -38,7 +39,13 @@ function App() {
 				/>
 				<AboutContainer handleBacked={handleBacked} />
 			</main>
-			{ showModal && <Modal setShowModal={setShowModal} />}
+			{ showModal &&
+				<Modal
+					setShowModal={setShowModal}
+					handleBacked={handleBacked}
+					setShowThanks={setShowThanks}
+				/>
+			}
 			{ showThanks && <ThanksPopUp setShowThanks={setShowThanks} />}
 		</>
 	);

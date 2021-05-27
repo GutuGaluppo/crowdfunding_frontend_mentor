@@ -1,21 +1,29 @@
 import './modal-style.css'
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OptionsModal from '../OptionsModal/OptionsModal';
 import { crowdfundData } from '../../Utils'
 
-function Modal({ setShowModal }) {
+function Modal({ setShowModal, handleBacked, setShowThanks }) {
 	return (
 		<div className="modal">
 			<section className="modal_main">
-				<div onClick={() => setShowModal(false)} className="modal_close_btn">
-					<FontAwesomeIcon icon={faTimes} />
+				<div className="modal_close_btn">
+					<FontAwesomeIcon
+						icon={['far', 'times']}
+						onClick={() => setShowModal(false)}
+						className="icon"
+					/>
 				</div>
 				<h1>Back this project</h1>
 				<p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
 				<div className="cards_container">
-					<OptionsModal data={crowdfundData} />
+					<OptionsModal
+						data={crowdfundData}
+						handleBacked={handleBacked}
+						setShowThanks={setShowThanks}
+						setShowModal={setShowModal}
+					/>
 				</div>
 			</section>
 		</div>
