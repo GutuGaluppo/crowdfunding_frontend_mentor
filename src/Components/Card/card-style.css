@@ -5,7 +5,7 @@
 	margin: 30px auto;
 }
 
-.out-of-stock {
+.out_of_stock {
 	opacity: 0.4;
 }
 
@@ -34,10 +34,10 @@
 	margin-left: 10px;
 }
 
-.out-of-stock-btn {
+.out_of_stock-btn {
 	background-color: var(--darkGray);
 	cursor: not-allowed;
 }
-.out-of-stock-btn:hover {
+.out_of_stock-btn:hover {
 	background-color: var(--darkGray);
 }
