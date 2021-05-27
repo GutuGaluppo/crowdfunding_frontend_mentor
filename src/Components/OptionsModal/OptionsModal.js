@@ -3,8 +3,19 @@ import './optionsModal-style.css'
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function CardModal({ data }) {
+function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 	const [isChecked, setIsChecked] = useState('')
+	const [amount, setAmount] = useState(0)
+
+	const handleChange = e => {
+		setAmount(Number(e.target.value))
+	}
+
+	const handleOnClick = () => {
+		handleBacked(amount)
+		setShowThanks(true)
+		setShowModal(false)
+	}
 
 	const focusedDiv = useRef()
 
@@ -54,9 +65,14 @@ function CardModal({ data }) {
 								<div className="input_wrapper">
 									<div className="input_container" ref={focusedDiv}>
 										<FontAwesomeIcon icon={faDollarSign} id="input_img" />
-										<input type="text" id="input" />
+										<input
+											type="text"
+											id="input"
+											defaultValue={option.pledgeAmount}
+											onChange={handleChange}
+										/>
 									</div>
-									<button>Continue</button>
+									<button onClick={handleOnClick}>Continue</button>
 								</div>
 							</div>
 						}
