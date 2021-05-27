@@ -5,12 +5,20 @@ import Modal from './Components/Modal/Modal'
 import Navbar from './Components/Navbar/Navbar'
 import PledgeContainer from './Components/PledgeContainer/PledgeContainer'
 import SubHeader from './Components/SubHeader/SubHeader'
+import ThanksPopUp from './Components/ThanksPopUp/ThanksPopUp'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fal } from '@fortawesome/pro-light-svg-icons'
+import { far } from '@fortawesome/pro-regular-svg-icons'
+
+library.add(fal, far)
 
 function App() {
 	const [backed, setBacked] = useState(89914)
 	const [totalBackers, setTotalBackers] = useState(5007)
 	const [daysLeft, setDaysLeft] = useState(56)
 	const [showModal, setShowModal] = useState(false)
+	const [showThanks, setShowThanks] = useState(true)
 
 	const handleBacked = (n) => {
 		console.log(backed)
@@ -30,7 +38,8 @@ function App() {
 				/>
 				<AboutContainer handleBacked={handleBacked} />
 			</main>
-			{ showModal && < Modal setShowModal={setShowModal} />}
+			{ showModal && <Modal setShowModal={setShowModal} />}
+			{ showThanks && <ThanksPopUp setShowThanks={setShowThanks} />}
 		</>
 	);
 }

@@ -14,7 +14,6 @@ function PledgeContainer({ backed, totalBackers, daysLeft }) {
 	}
 
 	function progressBarPorcentage(num) {
-		console.log(num)
 		if(num >= 100000) return
 		return num / 1000
 	}
