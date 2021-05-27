@@ -1,0 +1,18 @@
+.pledge_wrapper {
+	margin: 20px auto;
+}
+
+.pledge_container {
+	display: flex;
+	justify-content: space-around;
+	background-color: #fff;
+}
+.pledge_container * {
+	flex: 1;
+}
+.pledge_container div:nth-child(2){
+	border-left: 1px solid silver;
+	border-right: 1px solid silver;
+	padding-left: 40px;
+	margin-right: 40px;
+}
