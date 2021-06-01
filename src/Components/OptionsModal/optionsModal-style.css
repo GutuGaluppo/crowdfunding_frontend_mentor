@@ -3,7 +3,10 @@
 	border: 1px solid #ccc;
 	border-radius: 12px;
 	margin: 30px auto;
-	width: 90%;
+}
+
+.card_modal:focus-within {
+	border: 2px solid hsl(176, 50%, 47%);
 }
 
 .card_modal_wrapper {
@@ -79,8 +82,8 @@
 	justify-content: center;
 }
 
-.input_container:focus {
-	border: 2px solid var(--darCyan);
+div.input_container:focus-within {
+	border: 2px solid hsl(176, 50%, 47%);
 }
 
 #input {
@@ -88,6 +91,7 @@
 	height: 100%;
 	border: none;
 	font-weight: bold;
+	caret-color: hsl(176, 50%, 47%);
 }
 #input:focus {
 	outline: none;

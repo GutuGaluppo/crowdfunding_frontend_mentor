@@ -20,7 +20,7 @@ function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 	const focusedDiv = useRef()
 
 	useEffect(() => {
-		if (focusedDiv.current) focusedDiv.current.focus()
+		focusedDiv.current.focus()
 	}, [focusedDiv])
 
 	return (
@@ -40,7 +40,7 @@ function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 										disabled={option.outOfStock}
 										className="radio_modal"
 									/>
-									<label for={option.title} className='radio_label'>
+									<label htmlFor={option.title} className='radio_label' ref={focusedDiv} tabIndex="-1">
 										{option.title}
 									</label>
 								</div>
@@ -63,7 +63,7 @@ function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 							<div className="pledge_input_container">
 								<p>Enter your pledge</p>
 								<div className="input_wrapper">
-									<div className="input_container" ref={focusedDiv}>
+									<div className="input_container">
 										<FontAwesomeIcon icon={faDollarSign} id="input_img" />
 										<input
 											type="text"
