@@ -31,16 +31,18 @@ section {
 	padding: 35px;
 	background-color: #fff;
 	border-radius: 8px;
-	line-height: 1.5;
 	width: 53%;
-	min-width: 375px;
+	min-width: 328px; /* mobile version */
+}
+section p {
+	line-height: 1.8;
 }
 
 button {
 	color: #fff;
 	padding: 15px 25px;
 	border: none;
-	border-radius: 25px;
+	border-radius: 50px;
 	font-weight: 500;
 	background-color: var(--cyan);
 	cursor: pointer;
@@ -48,4 +50,13 @@ button {
 
 button:hover {
 	background-color: var(--darkCyan);
+}
+
+@media (min-width: 375px) {
+	p {
+		font-size: 0.9rem;
+	}
+	section {
+		padding: 22px;
+	}
 }
