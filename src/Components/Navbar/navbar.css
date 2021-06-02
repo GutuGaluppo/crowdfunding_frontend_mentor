@@ -29,7 +29,7 @@ nav {
 	width: 80%;
 	z-index: 10;
 }
-nav .nav_conteiner {
+.nav_conteiner {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -40,15 +40,29 @@ nav ul {
 	align-items: center;
 	list-style: none;
 }
-nav ul li {
+nav li {
 	padding: 0 10px;
 }
-nav ul li a {
+nav a {
 	text-decoration: none;
 	color: #fff;
 	font-weight: 400;
 }
-
-nav ul li a:hover {
+nav a:hover {
 	color: var(--darkCyan);
+}
+
+@media (min-width: 375px) {
+	nav {
+		margin: 0;
+		padding: 35px 28px;
+		width: 100%;
+	}
+	nav ul {
+		display: none;
+	}
+	.hero {
+		background-image: var(--mobileHero);
+		background-position: 0;
+	}
 }
