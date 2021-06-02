@@ -5,8 +5,8 @@ import { crowdfundData } from '../../Utils'
 function AboutContainer({handleBacked}) {
 
 	return (
-		<section className="about-wrapper">
-			<div className="about-container">
+		<section className="about_wrapper">
+			<div className="about_container">
 				<h3>About this project</h3>
 				<p>
 					The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen

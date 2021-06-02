@@ -9,25 +9,25 @@
 	opacity: 0.4;
 }
 
-.card-header {
+.card_header {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 20px;
 }
-
-.card-header p {
+.card_header p {
 	color: var(--cyan);
 }
 
-.card-footer {
+.card_footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 30px;
 }
 
-.card-footer > h2 > span {
+.card_footer > h2 > span {
 	font-size: 16px;
 	font-weight: 300;
 	color: var(--darkGray);
@@ -40,4 +40,28 @@
 }
 .out_of_stock-btn:hover {
 	background-color: var(--darkGray);
+}
+
+@media (max-width: 375px) {
+	.card {
+		padding: 20px;
+	}
+	.card_header {
+		display:block;
+	}
+	.card_header > h3 {
+		font-size: 0.9rem;
+		line-height: 1.8;
+	}
+	.card_header p {
+		font-weight: 500;
+	}
+	.card_footer {
+		display: block;
+		margin-top: 20px;
+	}
+	.card_footer > h2{
+		font-size: 2rem;
+		margin-bottom: 30px;
+	}
 }
