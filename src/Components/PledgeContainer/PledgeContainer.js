@@ -25,10 +25,12 @@ function PledgeContainer({ backed, totalBackers, daysLeft }) {
 					<h2>{formatAmount.format(backed)}</h2>
 					<p>of $100,000 backed</p>
 				</div>
+				<hr />
 				<div>
 					<h2>{formatNumber(totalBackers)}</h2>
 					<p>total backers</p>
 				</div>
+				<hr />
 				<div>
 					<h2>{daysLeft}</h2>
 					<p>days left</p>
