@@ -69,7 +69,7 @@ p {
 	color: var(--darkCyan);
 }
 
-@media (min-width: 375px) {
+@media (max-width: 375px) {
 	.sub_header h2 {
 		margin: 20px auto;
 	}
