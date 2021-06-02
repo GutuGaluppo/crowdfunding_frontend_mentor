@@ -17,7 +17,7 @@ function Modal({ setShowModal, handleBacked, setShowThanks }) {
 				<h1>Back this project</h1>
 				<p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
-				<div className="cards_container">
+				<div>
 					<OptionsModal
 						data={crowdfundData}
 						handleBacked={handleBacked}
