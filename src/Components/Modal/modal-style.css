@@ -16,16 +16,13 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	padding: 20px 30px;
-}
-@media (max-width: 375px) {
-	.modal_main {
-		overflow: auto;
-	}
+	padding: 20px 40px;
 }
 
 .modal_close_btn {
-	text-align: right;
+	display: flex;
+	justify-content: space-between;
+	margin: 20px auto;
 }
 .icon {
 	color: var(--darkGray);
@@ -33,4 +30,26 @@
 .icon:hover {
 	color: black;
 	cursor: pointer;
+}
+
+@media (max-width: 375px) {
+	.modal_main {
+		overflow: auto;
+		top: 55%;
+		height: 80%;
+		padding: 0px 25px 20px 25px;
+	}
+	.modal_close_btn,
+	.modal_close_btn > h1 {
+		font-size: 1.2rem;
+	}
+	.modal_header {
+		position: sticky;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 148px;
+		padding: 20px 0px;
+		background: #fff;
+	}
 }
