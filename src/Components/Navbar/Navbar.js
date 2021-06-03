@@ -31,7 +31,7 @@ export default function Navbar() {
 						) : (
 							<>
 								<FontAwesomeIcon icon={['fas', 'times']} style={{ color: 'white' }} />
-								<NavMobile/>
+								<NavMobile />
 							</>
 						)}
 					</div>

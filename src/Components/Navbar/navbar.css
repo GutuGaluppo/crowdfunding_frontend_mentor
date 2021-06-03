@@ -52,6 +52,10 @@ nav a:hover {
 	color: var(--darkCyan);
 }
 
+.menu{
+	display: none;
+}
+
 @media (max-width: 375px) {
 	nav {
 		margin: 0;
@@ -60,6 +64,9 @@ nav a:hover {
 	}
 	nav ul {
 		display: none;
+	}
+	.menu {
+		display: block;
 	}
 	.hero {
 		background-image: var(--mobileHero);
