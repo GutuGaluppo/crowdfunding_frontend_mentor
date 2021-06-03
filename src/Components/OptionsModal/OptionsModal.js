@@ -33,22 +33,28 @@ function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 					return <div key={option.title} className={`card_modal ${option.outOfStock ? "out_of_stock" : ''}`}>
 
 						<div className="card_modal_wrapper">
-							<div className="radio" onClick={() => setIsChecked(option.title)}>
+							<label
+								htmlFor={option.title}
+								className='radio radio_label'
+								ref={focusedDiv}
+								tabIndex="-1"
+								onClick={() => setIsChecked(option.title)}
+							>
+								{option.title}
+								{option.pledge &&
+									<span>{option.pledge}</span>
+								}
 								<input
 									type="radio"
 									value={option.title}
 									checked={isChecked === option.title}
-									onChange={() => setIsChecked(option.title)}
 									disabled={option.outOfStock}
 									className="radio_modal"
 								/>
-								<label htmlFor={option.title} className='radio_label' ref={focusedDiv} tabIndex="-1">
-									{option.title}
-									{option.pledge &&
-										<span>{option.pledge}</span>
-									}
-								</label>
-							</div>
+								<span class="checkmark"></span>
+
+							</label>
+
 							{option.pledgeLeft && size.width > 830 ?
 								(<div className="card_modal_pledge_left">
 									<h3>{option.pledgeLeft}<span>left</span></h3>

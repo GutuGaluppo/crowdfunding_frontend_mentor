@@ -1,5 +1,5 @@
 .card_modal {
-	padding: 20px 10px;
+	padding: 0px;
 	border: 1px solid #ccc;
 	border-radius: 12px;
 	margin: 30px auto;
@@ -14,12 +14,8 @@
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	padding: 0px;
-	padding-right: 20px;
-}
-
-.radio {
-	margin: 20px;
+	padding-right: 30px;
+	margin-top: 30px;
 }
 
 .radio,
@@ -32,8 +28,6 @@
 }
 
 .radio_label {
-	margin-left: 28px;
-	margin-right: 15px;
 	font-weight: bold;
 }
 
@@ -41,6 +35,50 @@
 	color: var(--cyan);
 	font-weight: 500;
 	margin-left: 15px;
+}
+
+/* The container */
+.radio {
+	display: flex;
+	align-items: baseline;
+	position: relative;
+	padding-left: 60px;
+	cursor: pointer;
+	line-height: 1.5;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.radio input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 26px;
+	width: 26px;
+	border: 2px solid var(--lightGray);
+	border-radius: 50px;
+}
+/* On mouse-over, add a cyan background color */
+.radio:hover input ~ .checkmark {
+	border: 2px solid hsl(176, 50%, 47%);
+}
+
+/* When the checkbox is checked, add a cyan background */
+.radio input:checked ~ .checkmark {
+	background-image: radial-gradient(hsl(176, 50%, 47%) 40%, rgba(255, 0, 0, 0) 41%);
+	background-position: center;
 }
 
 .card_modal_pledge_left > h3 > span {
@@ -58,7 +96,8 @@
 }
 
 .description_modal {
-	padding: 0px 20px 10px 60px;
+	padding: 20px;
+	padding-left: 60px;
 }
 
 .pledge_input_container {
@@ -80,10 +119,11 @@
 .input_container {
 	position: relative;
 	border: 2px solid silver;
-	border-radius: 20px;
+	border-radius: 50px;
 	padding: 10px;
+	height: 46px;
+	width: 90px;
 	margin-right: 15px;
-	width: 80px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -116,6 +156,7 @@ div.input_container:focus-within {
 	}
 	.card_modal_wrapper {
 		padding: 10px 20px;
+		margin-top: 0;
 	}
 
 	.card_modal_pledge_left {
@@ -126,16 +167,23 @@ div.input_container:focus-within {
 		padding: 10px 20px;
 	}
 	.radio {
-		display: flex;
-		align-items: center;
+		/* display: flex; */
 		margin: 0px;
+		padding-left: 40px;
 	}
-	
+
 	.radio_label {
 		display: flex;
 		flex-direction: column;
 	}
 	.radio_label > span {
-		margin: 10px 0px 0px;
+		margin: 0px;
+	}
+	.pledge_input_container {
+		justify-content: center;
+		padding-bottom: 0px;
+	}
+	.pledge_input_container > p {
+		margin-bottom: 20px;
 	}
 }
