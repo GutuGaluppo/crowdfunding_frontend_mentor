@@ -1,19 +1,25 @@
 .card_modal {
-	padding: 0px;
+	padding: 20px 10px;
 	border: 1px solid #ccc;
 	border-radius: 12px;
 	margin: 30px auto;
 }
 
 .card_modal:focus-within {
-	border: 2px solid hsl(176, 50%, 47%);
+	border: 1px solid hsl(176, 50%, 47%);
 }
 
 .card_modal_wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px;
+	flex-wrap: wrap;
+	padding: 0px;
+	padding-right: 20px;
+}
+
+.radio {
+	margin: 20px;
 }
 
 .radio,
@@ -31,9 +37,10 @@
 	font-weight: bold;
 }
 
-.card_modal_pledge {
+.radio_label > span {
 	color: var(--cyan);
 	font-weight: 500;
+	margin-left: 15px;
 }
 
 .card_modal_pledge_left > h3 > span {
@@ -101,4 +108,34 @@ div.input_container:focus-within {
 	margin: 0 5px 0 8px;
 	color: var(--darkGray);
 	font-size: 12px;
+}
+
+@media (max-width: 1234px) {
+	.card_modal {
+		padding: 20px 0;
+	}
+	.card_modal_wrapper {
+		padding: 10px 20px;
+	}
+
+	.card_modal_pledge_left {
+		margin-left: 20px;
+	}
+
+	.description_modal {
+		padding: 10px 20px;
+	}
+	.radio {
+		display: flex;
+		align-items: center;
+		margin: 0px;
+	}
+	
+	.radio_label {
+		display: flex;
+		flex-direction: column;
+	}
+	.radio_label > span {
+		margin: 10px 0px 0px;
+	}
 }

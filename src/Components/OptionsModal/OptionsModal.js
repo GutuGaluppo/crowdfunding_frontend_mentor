@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './optionsModal-style.css'
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import useWindowSize from '../../useWindowSize'
 
 function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 	const [isChecked, setIsChecked] = useState('')
@@ -23,6 +24,8 @@ function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 		focusedDiv.current.focus()
 	}, [focusedDiv])
 
+	const size = useWindowSize()
+
 	return (
 		<>
 			{
@@ -30,34 +33,36 @@ function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 					return <div key={option.title} className={`card_modal ${option.outOfStock ? "out_of_stock" : ''}`}>
 
 						<div className="card_modal_wrapper">
-							<div style={{ display: 'flex' }}>
-								<div className="radio" onClick={() => setIsChecked(option.title)}>
-									<input
-										type="radio"
-										value={option.title}
-										checked={isChecked === option.title}
-										onChange={() => setIsChecked(option.title)}
-										disabled={option.outOfStock}
-										className="radio_modal"
-									/>
-									<label htmlFor={option.title} className='radio_label' ref={focusedDiv} tabIndex="-1">
-										{option.title}
-									</label>
-								</div>
-
-								{option.pledge &&
-									<p className="card_modal_pledge">{option.pledge}</p>
-								}
+							<div className="radio" onClick={() => setIsChecked(option.title)}>
+								<input
+									type="radio"
+									value={option.title}
+									checked={isChecked === option.title}
+									onChange={() => setIsChecked(option.title)}
+									disabled={option.outOfStock}
+									className="radio_modal"
+								/>
+								<label htmlFor={option.title} className='radio_label' ref={focusedDiv} tabIndex="-1">
+									{option.title}
+									{option.pledge &&
+										<span>{option.pledge}</span>
+									}
+								</label>
 							</div>
-
-							{option.pledgeLeft &&
-								<div className="card_modal_pledge_left">
+							{option.pledgeLeft && size.width > 830 ?
+								(<div className="card_modal_pledge_left">
 									<h3>{option.pledgeLeft}<span>left</span></h3>
-								</div>
+								</div>) : null
 							}
 						</div>
 
 						<p className='description_modal'>{option.description}</p>
+
+						{option.pledgeLeft && size.width <= 830 ?
+							(<div className="card_modal_pledge_left">
+								<h3>{option.pledgeLeft}<span>left</span></h3>
+							</div>) : null
+						}
 
 						{option.title === isChecked &&
 							<div className="pledge_input_container">
