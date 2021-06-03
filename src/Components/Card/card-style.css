@@ -6,6 +6,7 @@
 }
 
 .out_of_stock {
+	pointer-events: none;
 	opacity: 0.4;
 }
 
@@ -34,10 +35,7 @@
 	margin-left: 10px;
 }
 
-.out_of_stock-btn {
-	background-color: var(--darkGray);
-	cursor: not-allowed;
-}
+.out_of_stock-btn,
 .out_of_stock-btn:hover {
 	background-color: var(--darkGray);
 }
