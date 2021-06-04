@@ -30,9 +30,9 @@ function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 		<>
 			{
 				data.map(option => {
-					return <div key={option.title} className={`card_modal ${option.outOfStock ? "out_of_stock" : ''}`}>
+					return <div key={option.title} className={`reward_modal ${option.outOfStock ? "out_of_stock" : ''}`}>
 
-						<div className="card_modal_wrapper">
+						<div className="reward_modal_wrapper">
 							<label
 								htmlFor={option.title}
 								className='radio radio_label'
@@ -56,7 +56,7 @@ function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 							</label>
 
 							{option.pledgeLeft && size.width > 830 ?
-								(<div className="card_modal_pledge_left">
+								(<div className="reward_modal_pledge_left">
 									<h3>{option.pledgeLeft}<span>left</span></h3>
 								</div>) : null
 							}
@@ -65,7 +65,7 @@ function CardModal({ data, handleBacked, setShowThanks, setShowModal }) {
 						<p className='description_modal'>{option.description}</p>
 
 						{option.pledgeLeft && size.width <= 830 ?
-							(<div className="card_modal_pledge_left">
+							(<div className="reward_modal_pledge_left">
 								<h3>{option.pledgeLeft}<span>left</span></h3>
 							</div>) : null
 						}

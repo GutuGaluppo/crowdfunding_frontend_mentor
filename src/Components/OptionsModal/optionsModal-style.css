@@ -1,15 +1,15 @@
-.card_modal {
+.reward_modal {
 	padding: 0px;
 	border: 1px solid #ccc;
 	border-radius: 12px;
 	margin: 30px auto;
 }
 
-.card_modal:focus-within {
+.reward_modal:focus-within {
 	border: 1px solid hsl(176, 50%, 47%);
 }
 
-.card_modal_wrapper {
+.reward_modal_wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -81,17 +81,17 @@
 	background-position: center;
 }
 
-.card_modal_pledge_left > h3 > span {
+.reward_modal_pledge_left > h3 > span {
 	font-size: 16px;
 	font-weight: 300;
 	color: var(--darkGray);
 	margin-left: 10px;
 }
 
-.card_title_container > h3 {
+.reward_title_container > h3 {
 	margin-right: 20px;
 }
-.card_title_container > p {
+.reward_title_container > p {
 	color: var(--cyan);
 }
 
@@ -151,15 +151,15 @@ div.input_container:focus-within {
 }
 
 @media (max-width: 1234px) {
-	.card_modal {
+	.reward_modal {
 		padding: 20px 0;
 	}
-	.card_modal_wrapper {
+	.reward_modal_wrapper {
 		padding: 10px 20px;
 		margin-top: 0;
 	}
 
-	.card_modal_pledge_left {
+	.reward_modal_pledge_left {
 		margin-left: 20px;
 	}
 

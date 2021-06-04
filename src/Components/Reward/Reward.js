@@ -6,22 +6,22 @@ const Reward = ({ data, handleBacked, setShowModal }) => {
 			{
 				data
 					.slice(1)
-					.map(card => {
-						return <div key={card.title} className={`card ${card.outOfStock ? "out_of_stock" : ''}`}>
-							<div className="card_header">
-								<h3>{card.title}</h3>
-								<p>{card.pledge}</p>
+					.map(item => {
+						return <div key={item.title} className={`reward ${item.outOfStock ? "out_of_stock" : ''}`}>
+							<div className="reward_header">
+								<h3>{item.title}</h3>
+								<p>{item.pledge}</p>
 							</div>
 
-							<p>{card.description}</p>
+							<p>{item.description}</p>
 
-							<div className="card_footer">
-								<h2>{card.pledgeLeft}<span>left</span></h2>
+							<div className="reward_footer">
+								<h2>{item.pledgeLeft}<span>left</span></h2>
 								<button
-									className={`${card.outOfStock ? "out_of_stock-btn" : ''}`}
+									className={`${item.outOfStock ? "out_of_stock-btn" : ''}`}
 									onClick={() => setShowModal(true)}
 								>
-									{card.buttonTitle}
+									{item.buttonTitle}
 								</button>
 							</div>
 						</div>

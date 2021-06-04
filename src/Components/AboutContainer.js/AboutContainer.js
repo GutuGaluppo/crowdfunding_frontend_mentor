@@ -1,8 +1,8 @@
-import Card from '../Card/Card'
+import Reward from '../Reward/Reward'
 import './aboutContainer-style.css'
 import { crowdfundData } from '../../Utils'
 
-function AboutContainer({handleBacked}) {
+function AboutContainer({handleBacked, setShowModal}) {
 
 	return (
 		<section className="about_wrapper">
@@ -20,9 +20,10 @@ function AboutContainer({handleBacked}) {
 					to allow notepads, pens, and USB sticks to be stored under the stand.
 				</p>
 
-				<Card
+				<Reward
 					data={crowdfundData}
 					handleBacked={handleBacked}
+					setShowModal={setShowModal}
 				/>
 
 			</div>
