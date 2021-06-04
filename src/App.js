@@ -38,7 +38,7 @@ function App() {
 					totalBackers={totalBackers}
 					daysLeft={daysLeft}
 				/>
-				<AboutContainer handleBacked={handleBacked} />
+				<AboutContainer handleBacked={handleBacked} setShowModal={setShowModal} />
 			</main>
 			{ showModal &&
 				<Modal
