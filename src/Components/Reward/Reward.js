@@ -1,6 +1,6 @@
-import './card-style.css'
+import './reward-style.css'
 
-const Card = ({ data, handleBacked }) => {
+const Reward = ({ data, handleBacked, setShowModal }) => {
 	return (
 		<>
 			{
@@ -19,7 +19,7 @@ const Card = ({ data, handleBacked }) => {
 								<h2>{card.pledgeLeft}<span>left</span></h2>
 								<button
 									className={`${card.outOfStock ? "out_of_stock-btn" : ''}`}
-									onClick={() => handleBacked(card.pledgeAmount)}
+									onClick={() => setShowModal(true)}
 								>
 									{card.buttonTitle}
 								</button>
@@ -31,4 +31,4 @@ const Card = ({ data, handleBacked }) => {
 	)
 }
 
-export default Card
+export default Reward

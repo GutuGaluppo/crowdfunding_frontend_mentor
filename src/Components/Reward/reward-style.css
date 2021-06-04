@@ -1,4 +1,4 @@
-.card {
+.reward {
 	border: 1px solid #ccc;
 	border-radius: 12px;
 	padding: 30px;
@@ -10,25 +10,25 @@
 	opacity: 0.4;
 }
 
-.card_header {
+.reward_header {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 20px;
 }
-.card_header p {
+.reward_header p {
 	color: var(--cyan);
 }
 
-.card_footer {
+.reward_footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 30px;
 }
 
-.card_footer > h2 > span {
+.reward_footer > h2 > span {
 	font-size: 16px;
 	font-weight: 300;
 	color: var(--darkGray);
@@ -41,24 +41,24 @@
 }
 
 @media (max-width: 375px) {
-	.card {
+	.reward {
 		padding: 20px;
 	}
-	.card_header {
+	.reward_header {
 		display:block;
 	}
-	.card_header > h3 {
+	.reward_header > h3 {
 		font-size: 0.9rem;
 		line-height: 1.8;
 	}
-	.card_header p {
+	.reward_header p {
 		font-weight: 500;
 	}
-	.card_footer {
+	.reward_footer {
 		display: block;
 		margin-top: 20px;
 	}
-	.card_footer > h2{
+	.reward_footer > h2{
 		font-size: 2rem;
 		margin-bottom: 30px;
 	}
