@@ -1,9 +1,7 @@
 import Reward from '../Reward/Reward'
 import './aboutContainer-style.css'
-import { crowdfundData } from '../../Utils'
 
-function AboutContainer({handleBacked, setShowModal}) {
-
+function AboutContainer({ rewards, openPledgeModal }) {
 	return (
 		<section className="about_wrapper">
 			<div className="about_container">
@@ -19,12 +17,15 @@ function AboutContainer({handleBacked, setShowModal}) {
 					the simplicity of design creates extra desk space below your computer
 					to allow notepads, pens, and USB sticks to be stored under the stand.
 				</p>
-
-				<Reward
-					data={crowdfundData}
-					handleBacked={handleBacked}
-					setShowModal={setShowModal}
-				/>
+				{rewards.slice(1).map(reward => {
+					return (
+						<Reward
+							key={reward.id}
+							data={reward}
+							openPledgeModal={() => openPledgeModal(reward.id)}
+						/>
+					)
+				})}
 
 			</div>
 		</section>

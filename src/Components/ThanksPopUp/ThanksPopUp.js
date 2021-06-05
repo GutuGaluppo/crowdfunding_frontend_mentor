@@ -1,7 +1,7 @@
 import './thanksPopUp-style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function ThanksPopUp({ setShowThanks }) {
+function ThanksPopUp({ setShowThanksModal }) {
 	return (
 		<div className="popup_container">
 			<div className="pop_content">
@@ -15,7 +15,7 @@ function ThanksPopUp({ setShowThanks }) {
 					an email once our campaign is completed.
 				</p>
 				<button
-					onClick={() => setShowThanks(false)}
+					onClick={() => setShowThanksModal(false)}
 					className="tnk_btn"
 				>
 					Got it!

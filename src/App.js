@@ -14,40 +14,57 @@ import { fas } from '@fortawesome/pro-solid-svg-icons'
 
 library.add(fal, far, fas)
 
-function App() {
-	const [backed, setBacked] = useState(89914)
-	const [totalBackers, setTotalBackers] = useState(5007)
-	const [daysLeft, setDaysLeft] = useState(56)
-	const [showModal, setShowModal] = useState(false)
-	const [showThanks, setShowThanks] = useState(false)
+function App({ productData }) {
 
-	function handleBacked(amount) {
-		setBacked(backed + amount)
-		setTotalBackers(totalBackers + 1)
+	const [data, setData] = useState(productData)
+	const [isPledgeModalOpen, setPledgeModalOpen] = useState(false)
+	const [showThanksModal, setShowThanksModal] = useState(false)
+	const [selectedRewardId, setSelectedRewardId] = useState()
+
+	function openPledgeModal(rewardId) {
+		setSelectedRewardId(rewardId)
+		setPledgeModalOpen(true)
+	}
+
+	function handlePledgeSubmition({ amount, rewardId }) {
+		const newData = JSON.parse(JSON.stringify(data))
+		newData.amountRaised = parseFloat(data.amountRaised) + parseFloat(amount)
+		newData.totalBackers = data.totalBackers + 1
+		const rewardPledged = newData.rewards.find((r) => r.id === rewardId)
+
+		if (rewardPledged) rewardPledged.pledgeLeft = rewardPledged.pledgeLeft - 1
+		setData(newData)
+		setPledgeModalOpen(false)
+		setShowThanksModal(true)
 	}
 
 	return (
 		<>
 			<Navbar />
 			<main>
-				<SubHeader
-					setShowModal={setShowModal}
-				/>
+				<SubHeader openPledgeModal={openPledgeModal} />
 				<PledgeContainer
-					backed={backed}
-					totalBackers={totalBackers}
-					daysLeft={daysLeft}
+					backed={data.amountRaised}
+					totalBackers={data.totalBackers}
+					daysLeft={data.daysLeft}
 				/>
-				<AboutContainer handleBacked={handleBacked} setShowModal={setShowModal} />
+				<AboutContainer
+					rewards={data.rewards}
+					openPledgeModal={openPledgeModal}
+				/>
 			</main>
-			{ showModal &&
+			{ isPledgeModalOpen &&
 				<Modal
-					setShowModal={setShowModal}
-					handleBacked={handleBacked}
-					setShowThanks={setShowThanks}
+					rewards={data.rewards}
+					setPledgeModalOpen={setPledgeModalOpen}
+					selectedRewardId={selectedRewardId}
+					onSubmitPledge={handlePledgeSubmition}
+					setShowThanksModal={setShowThanksModal}
 				/>
 			}
-			{ showThanks && <ThanksPopUp setShowThanks={setShowThanks} />}
+			{ showThanksModal &&
+				<ThanksPopUp setShowThanksModal={setShowThanksModal} />
+			}
 		</>
 	);
 }

@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const logo = "https://raw.githubusercontent.com/pjazanes/crowdfunding-product-page-main/6a4f9a295a6d0c6e4e2fe6ef6b93a3dcf50481d6/images/logo-mastercraft.svg"
 
-const SubHeader = ({ setShowModal }) => {
+const SubHeader = ({ openPledgeModal }) => {
 	const [bookmarked, setBookmarked] = useToggle()
-	
+
 	return (
 		<section className="sub_header">
 			<div className="master_logo">
@@ -16,7 +16,7 @@ const SubHeader = ({ setShowModal }) => {
 			<h2>Mastercraft Bamboo Monitor Riser</h2>
 			<p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
 			<div className="call_to_action">
-				<button onClick={setShowModal}>Back this project</button>
+				<button onClick={() => openPledgeModal(0)}>Back this project</button>
 				<div className="bookmark_container">
 					<button className={`btn_bookmark ${bookmarked ? 'bookmarked' : ''}`} onClick={setBookmarked}>
 						<FontAwesomeIcon icon={['fas', 'bookmark']} />
