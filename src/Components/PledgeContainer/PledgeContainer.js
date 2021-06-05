@@ -1,7 +1,7 @@
 import './pledgeContainer-style.css'
 import ProgressBar from '../ProgressBar/ProgressBar'
 
-function PledgeContainer({ backed, totalBackers, daysLeft }) {
+function PledgeContainer({ backed, totalBackers, daysLeft, amountToRaise }) {
 
 	var formatAmount = new Intl.NumberFormat('en-US', {
 		style: 'currency',
@@ -14,7 +14,7 @@ function PledgeContainer({ backed, totalBackers, daysLeft }) {
 	}
 
 	function progressBarPorcentage(num) {
-		if(num >= 100000) return
+		if (num >= amountToRaise) return
 		return num / 1000
 	}
 
