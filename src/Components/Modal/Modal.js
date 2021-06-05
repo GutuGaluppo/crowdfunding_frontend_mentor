@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './modal-style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import OptionsModal from '../OptionsModal/OptionsModal';
+import RewardsModal from '../RewardsModal/RewardsModal';
 
 function Modal({ rewards, setPledgeModalOpen, selectedRewardId, onSubmitPledge }) {
 
@@ -29,7 +29,7 @@ function Modal({ rewards, setPledgeModalOpen, selectedRewardId, onSubmitPledge }
 				</div>
 				<div>
 					{pledges.map((p) => (
-						<OptionsModal
+						<RewardsModal
 							key={p.id}
 							pledge={p}
 							isSelected={selectedPledgeId === p.id}

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './index.css'
-import AboutContainer from './Components/AboutContainer.js/AboutContainer'
+import ProductSection from './Components/ProductSection/ProductSection'
 import Modal from './Components/Modal/Modal'
 import Navbar from './Components/Navbar/Navbar'
 import PledgeContainer from './Components/PledgeContainer/PledgeContainer'
-import SubHeader from './Components/SubHeader/SubHeader'
+import Header from './Components/Header/Header'
 import ThanksPopUp from './Components/ThanksPopUp/ThanksPopUp'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -42,13 +42,14 @@ function App({ productData }) {
 		<>
 			<Navbar />
 			<main>
-				<SubHeader openPledgeModal={openPledgeModal} />
+				<Header openPledgeModal={openPledgeModal} />
 				<PledgeContainer
 					backed={data.amountRaised}
+					amountToRaise={data.amountToRaise}
 					totalBackers={data.totalBackers}
 					daysLeft={data.daysLeft}
 				/>
-				<AboutContainer
+				<ProductSection
 					rewards={data.rewards}
 					openPledgeModal={openPledgeModal}
 				/>
