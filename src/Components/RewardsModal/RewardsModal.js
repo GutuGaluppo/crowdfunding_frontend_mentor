@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import './optionsModal-style.css'
+import './rewards-modal-style.css'
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import useWindowSize from '../../useWindowSize'

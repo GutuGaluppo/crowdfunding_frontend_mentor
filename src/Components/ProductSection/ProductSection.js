@@ -1,7 +1,7 @@
 import Reward from '../Reward/Reward'
-import './aboutContainer-style.css'
+import './product-section-style.css'
 
-function AboutContainer({ rewards, openPledgeModal }) {
+function ProductSection({ rewards, openPledgeModal }) {
 	return (
 		<section className="about_wrapper">
 			<div className="about_container">
@@ -32,4 +32,4 @@ function AboutContainer({ rewards, openPledgeModal }) {
 	)
 }
 
-export default AboutContainer
+export default ProductSection
