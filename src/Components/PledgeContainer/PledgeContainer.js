@@ -13,7 +13,7 @@ function PledgeContainer({ backed, totalBackers, daysLeft, amountToRaise }) {
 		return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 	}
 
-	function progressBarPorcentage(num) {
+	function progressBarPercentage(num) {
 		if (num >= amountToRaise) return
 		return num / 1000
 	}
@@ -37,7 +37,7 @@ function PledgeContainer({ backed, totalBackers, daysLeft, amountToRaise }) {
 				</div>
 			</div>
 			<div>
-				<ProgressBar completed={progressBarPorcentage(backed)} />
+				<ProgressBar completed={progressBarPercentage(backed)} />
 			</div>
 		</section>
 	)
